@@ -1,24 +1,36 @@
-package zerhaz.springboot.topic;
+package zerhaz.springboot.courses;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+import zerhaz.springboot.topic.Topic;
+
 @Entity
-public class Topic {
+public class Course {
 
 	@Id
 	private String id;
 	private String name;
 	private String description;
+	private Topic topic;
 
-	public Topic() {
+	public Topic getTopic() {
+		return topic;
 	}
 
-	public Topic(String id, String name, String description) {
+	public void setTopic(Topic topic) {
+		this.topic = topic;
+	}
+
+	public Course() {
+	}
+
+	public Course(String id, String name, String description, String topicId) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.description = description;
+		this.topic = new Topic(topicId, "", "");
 	}
 
 	public String getId() {
