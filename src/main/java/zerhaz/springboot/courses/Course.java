@@ -2,6 +2,9 @@ package zerhaz.springboot.courses;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+
 
 import zerhaz.springboot.topic.Topic;
 
@@ -12,6 +15,7 @@ public class Course {
 	private String id;
 	private String name;
 	private String description;
+	@ManyToOne
 	private Topic topic;
 
 	public Topic getTopic() {
